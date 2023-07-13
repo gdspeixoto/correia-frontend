@@ -1,0 +1,64 @@
+<nav class="sidebar" [ngClass]="{'closeSidebar': !getSideBarState()}">
+  <header>
+    <div class="image-text">
+      <span class="image">
+        <img src="../../../assets/logo.jpg" alt="">
+      </span>
+      <div class="text header-text">
+        <span class="nameCompany">Correia</span>
+        <span class="Company">Material de Construção</span>
+      </div>
+    </div>
+
+    <i (click)="toggleSidebar()" class="fa-solid fa-chevron-right toggle" [ngClass]="{'toggleInverse': getSideBarState()}"></i>
+  </header>
+
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        <li class="nav-link">
+          <a routerLink="#">
+            <i class="fa-solid fa-circle-user icon"></i>
+            <span class="text nav-text">Gabriel</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/home" routerLinkActive="active">
+            <i class="fa-solid fa-house icon"></i>
+            <span class="text nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="#">
+            <i class="fa-solid fa-chart-simple icon"></i>
+            <span class="text nav-text">Rendimento Total</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="#">
+            <i class="fa-solid fa-cart-arrow-down icon"></i>
+            <span class="text nav-text">Vendas</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="#">
+            <i class="fa-solid fa-store icon"></i>
+            <span class="text nav-text">Produtos/Estoque</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="#">
+            <i class="fa-solid fa-wallet icon"></i>
+            <span class="text nav-text">Carteria</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/">
+            <i class="fa-solid fa-right-to-bracket icon inverse"></i>
+            <span class="text nav-text">Sair</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,90 @@
+.content{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titulo{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.titulo h1{
+  font-size: 1.5rem;
+  width: 80%;
+  padding: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.boxes{
+  width: 80%;
+  height: auto;
+  display: flex;
+}
+.boxItens{
+  width: 60%;
+}
+.boxItens .search{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.boxItens .search input[type=search]{
+  border: none;
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  padding: 15px 10px;
+  outline: none;
+  transition: var(--tran-04);
+}
+.boxItens .search input[type=search]:focus{
+  border: 1px solid var(--color-destaque);
+}
+.boxItens .produtos{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.boxItens .produtos .boxProduto{
+  width: 200px;
+  height: 200px;
+  background-color: #ff001e;
+  padding: 10px;
+  margin: 2px 3px;
+}
+.boxItens .produtos .boxProduto .infomations{
+  background-color: #333;
+  width: 100%;
+  padding: 10px;
+  opacity: 0;
+  transition: var(--tran-04);
+}
+.boxItens .produtos .boxProduto:hover .infomations{
+  opacity: 1;
+}
+.boxCarrinho{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box{
+  background-color: var(--white);
+  padding: 10px;
+  margin: 2px;
+  max-height: 850px;
+  overflow: scroll;
+}
+.iconRemove{
+  color: #ff001e;
+  cursor: pointer;
+}
+.table td, .table th {
+  border: none !important;
+}

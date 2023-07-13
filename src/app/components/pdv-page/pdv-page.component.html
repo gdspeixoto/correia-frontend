@@ -1,0 +1,104 @@
+<div class="page-wrapper" [ngClass]="{ 'closeSidebar': !getSideBarState() }">
+
+  <app-sidebar-nav></app-sidebar-nav>
+
+  <div class="content">
+
+    <div class="titulo">
+      <h1>{{title}}</h1>
+    </div>
+
+    <div class="boxes">
+      <div class="boxItens box">
+        <div class="search">
+          <input type="search" class="searchInput" placeholder="Pesquise Produtos...">
+        </div>
+        <div class="produtos">
+          <div class="boxProduto">
+            <div class="img"><img src="" alt=""></div>
+            <div class="infomations">
+              
+            </div>
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+          <div class="boxProduto">
+
+          </div>
+        </div>
+      </div>
+      <div class="boxCarrinho box">
+        <h5>Lista de Produtos</h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Qnt</th>
+              <th scope="col">Valor Und</th>
+              <th scope="col">Sub Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cano PVC 40mm</td>
+              <td>12</td>
+              <td>R$12,00</td>
+              <td>R$144,00</td>
+              <td><i class="fa-solid fa-circle-xmark iconRemove"></i></td>
+            </tr>
+            <tr>
+              <td>Cano PVC 40mm</td>
+              <td>12</td>
+              <td>R$12,00</td>
+              <td>R$144,00</td>
+              <td><i class="fa-solid fa-circle-xmark iconRemove"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</div>

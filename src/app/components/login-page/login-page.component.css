@@ -1,0 +1,100 @@
+.content{
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #eeeeee;
+}
+  .container{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.247);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.247);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.247);
+  }
+    .left{
+      width: 50%;
+      height: 50rem;
+      background-color: #f8b735;
+    }
+      .left .img{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        .left .img img{
+          width: 80%;
+          height: auto;
+        }
+    .right{
+      width: 50%;
+      height: 50rem;
+      flex-direction: column;
+      background-color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+      .right .logo{
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+        .right .logo img{
+          width: 100%;
+          height: auto;
+        }
+        .form{
+          width: 80%;
+          height: auto;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .esqueceu{
+          font-weight: 300;
+          font-size: 1.1rem;
+        }
+        .matForm{
+          width: 100%;
+        }
+        .sb{
+          color: var(--white);
+          background-color: var(--color-destaque);
+          padding: 5px;
+        }
+        .txt{
+          outline: var(--color-destaque);
+        }
+        .form::after
+        {
+          content: '';
+          border-bottom: 1px solid #ececec;
+          width: 80%;
+          margin-top: 20px;
+        }
+.company{
+  margin: 20px 0;
+  color: #d4d4d4;
+  font-weight: 500;
+}
+
+/* RESPONSIVIDADE */
+/* @media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .facet_sidebar
+   {
+    display: none;
+   }
+} */

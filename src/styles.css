@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #FFF;
+    --whitesmoke: #F9F9F9;
+    --light-grey: #edeaea;
+    --grey: #C4C4C4;
+    --medium-grey: #A7A7A7;
+    --deep-grey: #343434;
+    --black: #000000;
+    --blue: #1B77F3;
+    --light-blue: #65a0ee;
+    --red: #CF3C3F;
+    --color-destaque: #003cff;
+    --body-color: #eae9f7;
+    --text-color: #707070;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Poppins', "Helvetica Neue", sans-serif; background-color: var(--body-color);}
+a{color: #005f95; text-decoration: none; outline: none;}
+a:hover{color: var(--color-destaque); text-decoration: none; outline: none;}
+
+.page-wrapper{
+  width: calc(100vw - 25rem);
+  height: 100vh;
+  margin-left: 23rem;
+  transition: var(--tran-03);
+}
+.page-wrapper.closeSidebar{
+  width: calc(100vw - 7.5rem);
+  height: 100vh;
+  margin-left: 6rem;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7e7e7e;
+  transition: var(--tran-04);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-destaque);
+}
+/* FIM SCROLLBAR */

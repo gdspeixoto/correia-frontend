@@ -1,0 +1,49 @@
+<div class="page-wrapper" [ngClass]="{ 'closeSidebar': !getSideBarState() }">
+<app-sidebar-nav></app-sidebar-nav>
+
+<div class="content">
+  <div class="titulo">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="boxInfo">
+    <div class="box">
+      <h5>Vendas Realizadas</h5>
+      <h6>10 Vendas</h6>
+      <div class="imgs">
+        <div *ngFor="let produto of list_Produtos" class="img"><img src={{produto.img_Produto}} alt=""></div>
+      </div>
+    </div>
+    <div class="box">
+      <h5>Produtos com Pouco Estoque</h5>
+      <h6>{{vendas}} Produtos</h6>
+      <div class="imgs">
+        <div *ngFor="let produto of list_Produtos" class="img"><img src={{produto.img_Produto}} title={{produto.nome_Produto}} alt=""></div>
+      </div>
+    </div>
+    <div class="box">
+      <h5>Rentabilidade do Mês</h5>
+      <h6>Janeiro/2023</h6>
+      <h6 class="porcentagem"><span class="indicator"><i class="fa-solid fa-sort-up"></i></span> 10%</h6>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="chart-container">
+      <canvas id="MyChart" >{{ chart }}</canvas>
+    </div>
+  </div>
+  <div class="produtosVendidos">
+    <h1>Produtos Mais Vendidos</h1>
+  </div>
+  <div class="boxProdutosContent">
+    <div *ngFor="let produto of list_Produtos" class="boxProdutos">
+      <div class="imgProduto">
+        <img src={{produto.img_Produto}} alt="">
+      </div>
+      <div class="infoProduto">
+        <h3 class="text">{{produto.nome_Produto}}</h3>
+        <span class="text">{{produto.numVendas_Produto}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

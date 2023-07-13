@@ -1,0 +1,201 @@
+.content{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titulo{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.titulo h1{
+  font-size: 1.5rem;
+  width: 80%;
+  padding: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+.content .produtosVendidos{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.produtosVendidos h1{
+  font-size: 1rem;
+  width: 80%;
+  padding: 10px;
+  margin: 2rem 0;
+}
+.boxInfo{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box{
+  width: 24rem;
+  height: 10rem;
+  background-color: var(--white);
+  color: var(--color-text);
+  border-radius: 6px;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box h6{
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box h6 .indicator{
+  font-size: 1.3rem;
+  margin-top: .6rem;
+  padding: 1rem;
+  color: #03990f;
+}
+.box h6.porcentagem{
+  font-size: 2.2rem;
+}
+.box .imgs{
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.box .imgs .img{
+  flex-direction: row;
+  margin-left: -1rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-destaque);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-destaque);
+  color: var(--white);
+  transition: var(--tran-03);
+}
+.box .imgs .img img{
+  width: 100%;
+  border-radius: 50%;
+}
+.box .imgs .img:hover{
+  margin-left: 0;
+  transition: var(--tran-03);
+}
+.box .imgs .img:hover:nth-child(1){
+  margin-left: -1rem;
+}
+
+.banner{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: var(--white);
+}
+.banner .btns{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+.banner .btns .btn{
+  padding: 10px 20px;
+  border: 2px solid var(--color-destaque);
+  color: var(--color-destaque);
+  transition: var(--tran-04);
+}
+
+.banner .btns .btn.active,
+.banner .btns .btn:hover{
+  background-color: var(--color-destaque);
+  color: var(--white);
+}
+
+.boxProdutosContent{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.boxProdutos{
+  width: 24rem;
+  height: 30rem;
+  background-color: var(--white);
+  color: var(--color-text);
+  border-radius: 6px;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--tran-04);
+}
+/* .boxProdutos:hover{
+  scale: 1.06;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.13);
+} */
+.boxProdutos .infoProduto{
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.boxProdutos .infoProduto h3{
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  font-weight: 600;
+  text-align: center;
+}
+.boxProdutos .infoProduto span{
+  font-size: 1rem;
+  margin-top: -1.3rem;
+  font-weight: 200;
+}
+.box h6{
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxProdutos .imgProduto{
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+.boxProdutos .imgProduto img{
+  width: 75%;
+  height: auto;
+  transition: var(--tran-04);
+}
+.boxProdutos .imgProduto img:hover{
+  scale: 1.06;
+}
+.chart-container{
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+}
