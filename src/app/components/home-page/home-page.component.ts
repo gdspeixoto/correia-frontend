@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { SidebarNavService } from '../shared/sidebar-nav/sidebar-nav.service';
 import Chart from 'chart.js/auto';
+import { LoginDto } from 'src/app/models/LoginDto';
 
 @Component({
   selector: 'app-home-page',
@@ -27,6 +28,17 @@ export class HomePageComponent implements OnInit {
     this.createChart();
     this.produtos();
     this.vendas = this.list_Produtos.length;
+
+    const user = sessionStorage.getItem("user");
+    const decodedUser = JSON.parse(atob(user));
+    const decodeUser: LoginDto = {
+      Username: decodedUser.username,
+      Password: "",
+      Id: decodedUser.id,
+      Role: decodedUser.role
+    };
+
+    console.log(decodeUser);
   }
 
   public createChart(){

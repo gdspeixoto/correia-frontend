@@ -1,0 +1,33 @@
+/* For use in src/lib/core/theming/_palette.scss */
+$md-correia: (
+    50 : #e0e8ff,
+    100 : #b3c5ff,
+    200 : #809eff,
+    300 : #4d77ff,
+    400 : #2659ff,
+    500 : #003cff,
+    600 : #0036ff,
+    700 : #002eff,
+    800 : #0027ff,
+    900 : #001aff,
+    A100 : #ffffff,
+    A200 : #f2f3ff,
+    A400 : #bfc3ff,
+    A700 : #a6abff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);

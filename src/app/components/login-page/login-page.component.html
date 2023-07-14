@@ -6,21 +6,33 @@
       </div>
     </div>
     <div class="right">
-        <div class="logo"><img src="../../assets/logo.jpg" alt=""></div>
-        <div class="form">
-          <form>
-            <mat-form-field class="matForm txt" appearance="outline">
-              <mat-label>E-mail</mat-label>
-              <input matInput placeholder="gabriel@gdspeixoto.org.br">
-            </mat-form-field>
-            <mat-form-field class="matForm txt" appearance="outline">
-              <mat-label>Senha</mat-label>
-              <input matInput placeholder="**********">
-            </mat-form-field>
-            <button mat-button class="matForm sb">Entrar</button>
-          </form>
-        </div>
-        <p class="esqueceu">Esqueceu sua senha? <a href="">Clique aqui.</a></p>
+      <div class="logo"><img src="../../assets/logo.jpg" alt=""></div>
+      <div class="form">
+        <form autocomplete="off" [formGroup]="LoginForm" (ngSubmit)="Login()">
+          <mat-form-field class="matForm txt" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" autocomplete="off" type="text" formControlName="email">
+            <mat-error *ngIf="EmailInvalid() !== null">{{ EmailInvalid() }}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="matForm txt" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="Senha" autocomplete="off" type="password" formControlName="password"
+              [type]="hide ? 'password' : 'text'">
+            <mat-error *ngIf="PasswordInvalid() !== null">{{ PasswordInvalid() }}</mat-error>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+
+          <div *ngIf="loadingData" class="center">
+            <div class="spinner-grow" style="color: var(--color-destaque);" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+          <button *ngIf="!loadingData" type="submit" class="login_button" [disabled]="!LoginForm.valid" mat-button
+            class="matForm sb">Entrar</button>
+        </form>
+      </div>
+      <p class="esqueceu">Esqueceu sua senha? <a href="">Clique aqui.</a></p>
     </div>
   </div>
   <div class="company">Gabriel dos Santos Peixoto - &copy; {{year}}</div>

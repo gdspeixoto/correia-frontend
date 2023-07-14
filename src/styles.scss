@@ -1,11 +1,34 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/ngx-toastr/toastr.css";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+@import './theme/theme-correia.scss';
+@import '@angular/material/theming';
+@include mat-core();
 
 *{
     margin: 0;
     padding: 0;
 }
+
+//light
+$light-theme-app-primary: mat-palette($md-correia, 500);
+$light-theme-app-secondary: mat-palette($md-correia, 600);
+$light-theme-app-warn: mat-palette($mat-red);
+$light-theme-theme: mat-light-theme($light-theme-app-primary, $light-theme-app-secondary, $light-theme-app-warn);
+
+// //dark
+// $dark-theme-app-primary: mat-palette($md-dark-mode-correia, 500);
+// $dark-theme-app-secondary: mat-palette($md-dark-mode-correia, 600);
+// $dark-theme-app-warn: mat-palette($mat-red);
+// $dark-theme-theme: mat-dark-theme($dark-theme-app-primary, $dark-theme-app-secondary, $dark-theme-app-warn);
+
+@include angular-material-theme($light-theme-theme);
+
+// .dark-mode{
+//   @include angular-material-theme($dark-theme-theme);
+// }
 
 :root {
     --white: #FFF;
@@ -29,7 +52,7 @@
   }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Poppins', "Helvetica Neue", sans-serif; background-color: var(--body-color);}
+body { margin: 0; font-family: 'Poppins', "Helvetica Neue", sans-serif; font-size: 0.9rem; background-color: var(--body-color);}
 a{color: #005f95; text-decoration: none; outline: none;}
 a:hover{color: var(--color-destaque); text-decoration: none; outline: none;}
 
@@ -58,3 +81,11 @@ a:hover{color: var(--color-destaque); text-decoration: none; outline: none;}
   background: var(--color-destaque);
 }
 /* FIM SCROLLBAR */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+}

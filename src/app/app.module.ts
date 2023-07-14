@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -22,6 +23,11 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatBadgeModule} from '@angular/material/badge';
+import { httpInterceptorProviders } from './components/shared/guard';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
+import { HomeComponent } from './components/layout/home/home.component';
+import { AuthenticationComponent } from './components/layout/authentication/authentication.component';
 
 
 @NgModule({
@@ -30,10 +36,14 @@ import {MatBadgeModule} from '@angular/material/badge';
     LoginPageComponent,
     HomePageComponent,
     SidebarNavComponent,
-    PdvPageComponent
+    PdvPageComponent,
+    HomeComponent,
+    AuthenticationComponent
   ],
   imports: [
+    ToastrModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
@@ -52,7 +62,13 @@ import {MatBadgeModule} from '@angular/material/badge';
     BrowserAnimationsModule,
     MatBadgeModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders,
+    { provide: LOCALE_ID, useValue: 'pt' },
+    // *************************************************
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    // *************************************************
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

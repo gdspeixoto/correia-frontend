@@ -1,3 +1,4 @@
+import { LoginService } from 'src/app/services/login.service';
 import { SidebarNavService } from './sidebar-nav.service';
 import { Component, OnInit} from '@angular/core';
 
@@ -10,7 +11,7 @@ export class SidebarNavComponent implements OnInit {
 
   public showMyClass: boolean;
 
-  constructor(public sidebarservice: SidebarNavService) { }
+  constructor(public sidebarservice: SidebarNavService, private loginService: LoginService) { }
 
   ngOnInit() {
     this.showMyClass = false;
@@ -22,5 +23,9 @@ export class SidebarNavComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
+  }
+
+  logout(){
+    this.loginService.LogoutUser()
   }
 }
