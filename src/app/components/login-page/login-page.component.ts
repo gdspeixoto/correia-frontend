@@ -86,4 +86,21 @@ export class LoginPageComponent implements OnInit {
 
     }, 3000);
   }
+
+  public async EsqueciSenha() {
+    let loginDto: LoginDto = new LoginDto();
+    loginDto.Username = this.LoginForm.value.email;
+    loginDto.Password = this.LoginForm.value.password;
+
+    this.loginService.EsqueceuSenha(loginDto)
+      .then(result => {
+
+        if (result) {
+          this.toastr.success(result);
+        }
+      })
+      .catch(error => {
+        this.toastr.error("Ocorreu um erro: " + error, "Error");
+      });
+  }
 }

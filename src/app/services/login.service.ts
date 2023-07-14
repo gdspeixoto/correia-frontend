@@ -15,7 +15,12 @@ export class LoginService {
   }
 
   public async AutenticationUser(login: LoginDto) {
-    const Response = await this.httpClient.post<any>(this.baseUrl + "Exemplo/login", login).toPromise();
+    const Response = await this.httpClient.post<any>(this.baseUrl + "UserAccount/login", login).toPromise();
+    return Response;
+  }
+
+  public async EsqueceuSenha(login: LoginDto) {
+    const Response = await this.httpClient.post<any>(this.baseUrl + "UserAccount/esqueci-minha-senha", login).toPromise();
     return Response;
   }
 

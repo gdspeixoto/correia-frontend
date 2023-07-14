@@ -1,3 +1,4 @@
+import { Employee } from './../../models/Employee';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { SidebarNavService } from '../shared/sidebar-nav/sidebar-nav.service';
 import Chart from 'chart.js/auto';
@@ -31,14 +32,11 @@ export class HomePageComponent implements OnInit {
 
     const user = sessionStorage.getItem("user");
     const decodedUser = JSON.parse(atob(user));
-    const decodeUser: LoginDto = {
-      Username: decodedUser.username,
-      Password: "",
-      Id: decodedUser.id,
-      Role: decodedUser.role
+    const decodeUser = {
+      decodedUser
     };
 
-    console.log(decodeUser);
+    console.log(decodeUser.decodedUser);
   }
 
   public createChart(){

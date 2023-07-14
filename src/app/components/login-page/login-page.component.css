@@ -65,6 +65,13 @@
         .esqueceu{
           font-weight: 300;
         }
+        .esqueceu a{
+          color: var(--blue);
+          cursor: pointer;
+        }
+        .esqueceu a:hover{
+          color: var(--light-blue);
+        }
         .matForm{
           width: 100%;
         }
