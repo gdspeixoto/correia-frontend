@@ -9,7 +9,7 @@ export class AuthInterceptor implements HttpInterceptor {
   router: any;
   constructor(private loginService: LoginService, private toastr: ToastrService,) { }
 
-  async Redirecionamento(){
+  async Redirecionamento() {
     this.loginService.LogoutUser();
     window.location.reload();
   }
@@ -35,20 +35,20 @@ export class AuthInterceptor implements HttpInterceptor {
             }, 1000)
           } else if (err.status === 400) {
             this.toastr.error("Verifique suas credenciais", "Erro");
-          } else if(err.status === 0){
+          } else if (err.status === 0) {
             this.toastr.error("Por favor, tente novamente mais tarde ou entre em contato com o suporte técnico caso o problema persista.", "Desculpe, ocorreu um erro ao processar sua solicitação.");
-          } else if(err.status == 403){
+          } else if (err.status == 403) {
             this.toastr.warning("Você não tem acesso suficiente para acessar essa página", "Alerta");
             this.toastr.info("Redirecionando para inicio.");
             setTimeout(() => {
               this.router.navigation(['/inicio']);
             }, 1000);
-          } else if(err.status == 500){
+          } else if (err.status == 500) {
             this.toastr.error(`${err.error}`, "Erro");
-          }else if(err.status == 404){
+          } else if (err.status == 404) {
             this.toastr.error(`${err.error}`, "Erro");
           }
-           else{
+          else {
             this.toastr.error("Um erro inesperado ocorreu, tente novamente", "Erro");
           }
         }

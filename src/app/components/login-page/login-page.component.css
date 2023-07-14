@@ -18,7 +18,7 @@
   }
     .left{
       width: 50%;
-      height: 40rem;
+      height: 35rem;
       background-color: #f8b735;
     }
       .left .img{
@@ -34,7 +34,7 @@
         }
     .right{
       width: 50%;
-      height: 40rem;
+      height: 35rem;
       flex-direction: column;
       background-color: var(--white);
       display: flex;
@@ -42,7 +42,7 @@
       align-items: center;
     }
       .right .logo{
-        width: 30%;
+        width: 25%;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -92,7 +92,7 @@
         }
 .company{
   margin: 20px 0;
-  color: #d4d4d4;
+  color: #adadad;
   font-weight: 500;
 }
 
