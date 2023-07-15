@@ -18,6 +18,7 @@ export class LoginPageComponent implements OnInit {
   public LoginForm: FormGroup;
   public msgErro: string;
   public loadingData: boolean;
+  public esconderForm: boolean = false;
   public hide = true;
   public spinner: boolean;
 
@@ -58,6 +59,10 @@ export class LoginPageComponent implements OnInit {
     return null;
   }
 
+  telaLogin() {
+    this.esconderForm = !this.esconderForm;
+  }
+
   public async Login() {
     let loginDto: LoginDto = new LoginDto();
     loginDto.Username = this.LoginForm.value.email;
@@ -90,13 +95,18 @@ export class LoginPageComponent implements OnInit {
   public async EsqueciSenha() {
     let loginDto: LoginDto = new LoginDto();
     loginDto.Username = this.LoginForm.value.email;
-    loginDto.Password = this.LoginForm.value.password;
+
+    this.esconderForm = true;
 
     this.loginService.EsqueceuSenha(loginDto)
       .then(result => {
 
         if (result) {
-          this.toastr.success(result);
+          this.toastr.success(result.message);
+          this.esconderForm = false;
+        }
+        else {
+          this.esconderForm = true;
         }
       })
       .catch(error => {

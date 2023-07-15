@@ -6,8 +6,16 @@
       </div>
     </div>
     <div class="right">
-      <div class="logo"><img src="../../assets/logo.jpg" alt=""></div>
-      <div class="form">
+
+      <div *ngIf="loadingData" class="center">
+        <div class="spinner-grow" style="color: var(--color-destaque);" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <div *ngIf="!loadingData" class="logo"><img src="../../assets/logo.jpg" alt=""></div>
+
+      <div class="form" *ngIf="!esconderForm && !loadingData">
         <form autocomplete="off" [formGroup]="LoginForm" (ngSubmit)="Login()">
           <mat-form-field class="matForm txt" appearance="outline">
             <mat-label>E-mail</mat-label>
@@ -22,17 +30,32 @@
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </mat-form-field>
 
+          <button type="submit" class="login_button" [disabled]="!LoginForm.valid" mat-button class="matForm sb">
+            Entrar
+          </button>
+        </form>
+      </div>
+
+      <div class="form" *ngIf="esconderForm">
+        <form autocomplete="off" [formGroup]="LoginForm" (ngSubmit)="EsqueciSenha()">
+          <mat-form-field class="matForm txt" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" autocomplete="off" type="text" formControlName="email">
+            <mat-error *ngIf="EmailInvalid() !== null">{{ EmailInvalid() }}</mat-error>
+          </mat-form-field>
+
           <div *ngIf="loadingData" class="center">
             <div class="spinner-grow" style="color: var(--color-destaque);" role="status">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
 
-          <button *ngIf="!loadingData" type="submit" class="login_button" [disabled]="!LoginForm.valid" mat-button
-            class="matForm sb">Entrar</button>
+          <button *ngIf="!loadingData" type="submit" class="login_button" mat-button
+            class="matForm sb">Enviar Nova Senha</button>
         </form>
       </div>
-      <p *ngIf="!loadingData" class="esqueceu">Esqueceu sua senha? <a (click)="EsqueciSenha()">Clique aqui.</a></p>
+      <p *ngIf="!loadingData && !esconderForm" class="esqueceu">Esqueceu sua senha? <a (click)="telaLogin()">Clique aqui.</a></p>
+      <p *ngIf="!loadingData && esconderForm" class="esqueceu">Voltar para o login? <a (click)="telaLogin()">Clique aqui.</a></p>
     </div>
   </div>
   <div class="company">Gabriel dos Santos Peixoto - &copy; {{year}}</div>
