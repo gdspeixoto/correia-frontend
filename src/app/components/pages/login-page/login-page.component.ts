@@ -14,7 +14,6 @@ export class LoginPageComponent implements OnInit {
 
   public date: Date;
   public year: number;
-
   public LoginForm: FormGroup;
   public msgErro: string;
   public loadingData: boolean;

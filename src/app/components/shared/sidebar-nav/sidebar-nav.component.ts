@@ -11,10 +11,23 @@ export class SidebarNavComponent implements OnInit {
 
   public showMyClass: boolean;
 
-  constructor(public sidebarservice: SidebarNavService, private loginService: LoginService) { }
+  public nomeUser: string;
+
+  constructor(public sidebarservice: SidebarNavService, private loginService: LoginService) {
+  }
 
   ngOnInit() {
     this.showMyClass = false;
+  }
+
+  ngAfterContentInit(){
+    const user = sessionStorage.getItem("user");
+    const decodedUser = JSON.parse(atob(user));
+    const decodeUser = {
+      decodedUser
+    };
+
+    this.nomeUser = decodeUser.decodedUser.name.split(" ")[0];;
   }
 
   getSideBarState() {

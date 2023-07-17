@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarNavService } from '../shared/sidebar-nav/sidebar-nav.service';
+import { SidebarNavService } from '../../shared/sidebar-nav/sidebar-nav.service';
 
 @Component({
   selector: 'app-pdv-page',

@@ -1,6 +1,5 @@
-import { PdvPageComponent } from './components/pdv-page/pdv-page.component';
+import { PdvPageComponent } from './components/pages/pdv-page/pdv-page.component';
 import { SidebarNavComponent } from './components/shared/sidebar-nav/sidebar-nav.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { MatInputModule } from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { HomeComponent } from './components/layout/home/home.component';
 import { AuthenticationComponent } from './components/layout/authentication/authentication.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ProfileAccountComponent } from './components/pages/profile-account/profile-account.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AuthenticationComponent } from './components/layout/authentication/auth
     SidebarNavComponent,
     PdvPageComponent,
     HomeComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    ProfileAccountComponent
   ],
   imports: [
     ToastrModule.forRoot(),
@@ -60,7 +62,8 @@ import { AuthenticationComponent } from './components/layout/authentication/auth
     MatSortModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatCheckboxModule
   ],
   providers: [
     httpInterceptorProviders,

@@ -50,13 +50,17 @@
             </div>
           </div>
 
-          <button *ngIf="!loadingData" type="submit" class="login_button" mat-button
-            class="matForm sb">Enviar Nova Senha</button>
+          <button *ngIf="!loadingData" type="submit" class="login_button" mat-button class="matForm sb">Enviar Nova
+            Senha</button>
         </form>
       </div>
-      <p *ngIf="!loadingData && !esconderForm" class="esqueceu">Esqueceu sua senha? <a (click)="telaLogin()">Clique aqui.</a></p>
-      <p *ngIf="!loadingData && esconderForm" class="esqueceu">Voltar para o login? <a (click)="telaLogin()">Clique aqui.</a></p>
+      <p *ngIf="!loadingData && !esconderForm" class="esqueceu">Esqueceu sua senha? <a (click)="telaLogin()">Clique
+          aqui.</a></p>
+      <p *ngIf="!loadingData && esconderForm" class="esqueceu">Voltar para o login? <a (click)="telaLogin()">Clique
+          aqui.</a></p>
     </div>
   </div>
+
   <div class="company">Gabriel dos Santos Peixoto - &copy; {{year}}</div>
 </div>
+

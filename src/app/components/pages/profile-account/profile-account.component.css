@@ -1,0 +1,105 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  transition: all 1s linear;
+  align-items: center;
+}
+/* BOTÕES FORMULARIO */
+.botoesForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnForm{
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding: 10px;
+  justify-content: center;
+  margin: 2px 2px;
+  background-color: var(--cimatecColor);
+  color: var(--white);
+  opacity: 0.5;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+}
+.btnForm span{
+  font-size: 16px;
+  margin: 5px;
+}
+.btnForm:hover{
+  opacity: 1;
+}
+.container{transition: all 1s linear;}
+
+mat-form-field{
+  margin-left: 5px;
+  margin-top: 12px;
+  background-color: transparent !important;
+  font-size: 14px;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: var(--white);
+}
+/* TITULO DAS DIVISÕES */
+.tituloH3{
+  text-align: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #e6e6e6;
+  color: #858585;
+  flex-basis: 100%;
+}
+
+.back{
+  flex-basis: 100%;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--white);
+}
+
+.iconTD{
+  padding: 1.1rem 1rem;
+  color: var(--cimatecColor);
+}
+
+.semBorda tr, .semBorda td{
+  border: 0;
+  vertical-align: middle;
+}
+
+.infoUser{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.infoUser .imgUser{
+  width: 50%;
+  height: auto;
+  background-color: bisque;
+}
+.infoUser .dadosUser{
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.infoUser .dadosUser form{
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+/* GLOBAIS */
+.borda{
+  border-radius: 10px;
+}

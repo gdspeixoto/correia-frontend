@@ -1,8 +1,11 @@
-import { Employee } from './../../models/Employee';
+import { Employee } from '../../../models/Employee';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { SidebarNavService } from '../shared/sidebar-nav/sidebar-nav.service';
+import { SidebarNavService } from '../../shared/sidebar-nav/sidebar-nav.service';
 import Chart from 'chart.js/auto';
 import { LoginDto } from 'src/app/models/LoginDto';
+import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home-page',
@@ -20,23 +23,25 @@ export class HomePageComponent implements OnInit {
   public list_Produtos: any[];
   public vendas:number;
 
-  constructor(public sidebarservice: SidebarNavService) {
+  public loginTeste: LoginDto[];
+
+  constructor(public sidebarservice: SidebarNavService,
+    private loginService: LoginService,
+    private router: Router,
+    private toastr: ToastrService) {
     this.loja = 'Correia Material de Construção'
     this.title = 'Dashboard'
+
+    this.loginTeste = [
+      {Id: 1, Name: "Nome 1", Username: "gabriel.peixoto.ssa02@gmail.com", DtCreator: "2023-07-16", DtUpdate: "2023-07-16", Employee: null, Password: "senha1", Role: "Role 1", ViewConfidentialData: 1, Status: "Ativo", IdUserCreator: 1, DtExclusion: null, IdUserExclusion: null, IdUserUpdate: null},
+      {Id: 2, Name: "Nome 2", Username: "gdspeixoto.ssa@outlook.com", DtCreator: "2023-07-16", DtUpdate: "2023-07-16", Employee: null, Password: "senha2", Role: "Role 2", ViewConfidentialData: 1, Status: "Ativo", IdUserCreator: 2, DtExclusion: null, IdUserExclusion: null, IdUserUpdate: null},
+    ];
   }
 
   ngOnInit() {
     this.createChart();
     this.produtos();
     this.vendas = this.list_Produtos.length;
-
-    const user = sessionStorage.getItem("user");
-    const decodedUser = JSON.parse(atob(user));
-    const decodeUser = {
-      decodedUser
-    };
-
-    console.log(decodeUser.decodedUser);
   }
 
   public createChart(){
@@ -69,6 +74,21 @@ export class HomePageComponent implements OnInit {
     });
   }
 
+  public async teste() {
+
+    console.log(this.loginTeste)
+
+    this.loginService.teste(this.loginTeste)
+      .then(result => {
+        if (result) {
+          this.toastr.success(result.message);
+        }
+      })
+      .catch(error => {
+        this.toastr.error("Ocorreu um erro: " + error, "Error");
+      });
+  }
+
 
   public produtos(): void{
     this.list_Produtos = [
@@ -96,14 +116,12 @@ export class HomePageComponent implements OnInit {
   //Funções do sidebar
   public toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
-    console.log(this.sidebarservice.setSidebarState);
   }
   public getSideBarState() {
     return this.sidebarservice.getSidebarState();
   }
   public hideSidebar() {
     this.sidebarservice.setSidebarState(false);
-    console.log(this.sidebarservice.setSidebarState);
   }
 
 }

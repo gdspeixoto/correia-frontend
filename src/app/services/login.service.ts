@@ -69,6 +69,11 @@ export class LoginService {
     return true;
   }
 
+  public async teste(login: LoginDto[]) {
+    const Response = await this.httpClient.post<any>(this.baseUrl + "UserAccount/teste", login).toPromise();
+    return Response;
+  }
+
 }
   function jwt_decode(token: string): any {
     throw new Error('Function not implemented.');

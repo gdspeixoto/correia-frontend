@@ -1,0 +1,32 @@
+<div class="page-wrapper" [ngClass]="{ 'closeSidebar': !getSideBarState() }">
+  <app-sidebar-nav></app-sidebar-nav>
+
+  <div class="container">
+    <div class="content">
+      <div class="back borda box-shadow">
+        <h3 class="tituloH3">Perfil</h3>
+
+        <div class="infoUser">
+          <div class="imgUser">
+
+          </div>
+          <div class="dadosUser">
+            <form autocomplete="off">
+              <mat-form-field>
+                <mat-label>Matrícula</mat-label>
+                <input matInput [value]="user.id" placeholder="Ex. Claudinei Costa" disabled>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput [value]="user.name" placeholder="Ex. Claudinei Costa" disabled>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Login</mat-label>
+                <input matInput [value]="user.username" placeholder="Ex. Claudinei Costa" disabled>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
